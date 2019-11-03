@@ -1,2 +1,2 @@
 # t-event
-Typescript event
+typescript event

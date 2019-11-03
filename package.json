@@ -1,0 +1,40 @@
+{
+  "name": "t-event",
+  "version": "0.0.3",
+  "description": "Typescript event",
+  "dependencies": {
+    "@types/node": "^12.12.3",
+    "file-copy-no-overwrite": "git+https://github.com/dikac/file-copy-no-overwrite.git",
+    "npm-run-all": "^4.1.5",
+    "t-map": "git+https://github.com/dikac/t-map.git",
+    "t-set": "git+https://github.com/dikac/t-set.git",
+    "t-toggle": "git+https://github.com/dikac/t-toggle.git",
+    "typescript": "^3.6.4"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.4.0",
+    "jasmine": "^3.4.0"
+  },
+  "scripts": {
+    "spec-run": "jasmine --config=./jasmine.json",
+    "spec": "npm-run-all spec-compile spec-run",
+    "spec-compile": "npm-run-all --parallel spec-compile-script ",
+    "spec-compile-watch": "npm-run-all --parallel spec-compile-watch-script",
+    "spec-compile-script": "tsc -p tsconfig-spec.json",
+    "spec-compile-watch-script": "tsc -w -p tsconfig-spec.json",
+    "compile": "tsc",
+    "compile-watch": "tsc -w",
+    "install": "npm-run-all production compile",
+    "production": "file-copy-no-overwrite tsconfig-production.json tsconfig.json"
+  },
+  "files": [
+    "tsconfig-development.json",
+    "src/",
+    ".gitignore",
+    "LICENSE",
+    "Readme.md",
+    "tsconfig-production.json"
+  ],
+  "author": "",
+  "license": "MIT"
+}
